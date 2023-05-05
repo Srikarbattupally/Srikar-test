@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<title>IOT</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    #demo{
+                display: flex;
+                
+                padding: 10% 10%;
+                
+              
+            }
+    header {background-image: url(data:image/jpeg;base64,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);
+        color: darkgray;
+        padding: 30px;
+        text-align: center;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        font-size: 35px;
+        height: 300px;
+        width: auto;
+       }
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Container for flexboxes */
+section {
+  display: -webkit-flex;
+  display: flex;
+  
+}
+
+/* Style the navigation menu */
+nav {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #ccc;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Style the content */
+article {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  background-image: linear-gradient(to right, rgba(23, 124, 26, 0), rgb(191, 179, 231));
+  padding: 10px;
+  
+}
+
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+h3{
+    border: double;
+}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.1s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.box{
+  background-color: blue;
+  height: 400px;
+  width: 280px; 
+  margin: 30px 30px;
+}
+</style>
+<script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+    </script>
+</head>
+<body>
+
+
+
+<header>
+  <h1>INTERNET OF THINGS</h1>
+  <div class="logo"><img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/The_Top_35_IoT_Terms.jpg" height="200px" width="250px"></div>
+</header>
+
+<section>
+    
+  
+  <article>
+   <right>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#">About</a>
+      <a href="#">Assignments</a>
+      <a href="#">Notes</a>
+      <a href="#">Projects</a>
+      <a href="">Timetable</a>
+    </div>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span></right>
+    <h3>UPDATES:<marquee>MID EXAMS FROM MONDAY</marquee></h3>
+    <p>
+        What is IoT? The Internet of Things (IoT) describes the network of physical objects—“things”—that are embedded with sensors, software, and other technologies for the purpose of connecting and exchanging data with other devices and systems over the internet.
+    </p>
+    <p>
+        These devices range from ordinary household objects to sophisticated industrial tools. With more than 7 billion connected IoT devices today, experts are expecting this number to grow to 10 billion by 2020 and 22 billion by 2025. Oracle has a network of device partners.
+
+    </p>
+
+    <div id="demo" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+      
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://enterprisersproject.com/sites/default/files/styles/google_discover/public/images/CIO_IoT_1.png?itok=rU2xFvvd "width="auto" height="auto"  alt="Los Angeles">
+          </div>
+          <div class="carousel-item">
+            <img src="https://d3lkc3n5th01x7.cloudfront.net/wp-content/uploads/2022/10/11024146/IoT-and-web3.png" width="auto" height="auto" alt="Chicago">
+          </div>
+          <div class="carousel-item">
+            <img src="https://www.cloudcredential.org/wp-content/uploads/bb-plugin/cache/iot-panorama.jpg" width="auto" height="auto " alt="New York">
+          </div>
+        </div>
+      
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      
+      </div>
+  </article>
+</section>
+<div class="box">
+ <img src="" alt="">
+</div>
+<footer>
+  <p>Footer</p>
+</footer>
+
+</body>
+</html>
+
